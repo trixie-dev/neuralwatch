@@ -14,10 +14,7 @@ def register(user: schemas.UserCreate, db: Session = Depends(get_db)):
         models.User.username == user.username
     ).first()
     if existing:
-        raise HTTPException(
-            status_code=400,
-            detail="Username already taken"
-        )
+        raise HTTPException(status_code=400, detail="Username already taken")
     new_user = models.User(
         username=user.username,
         hashed_password=hash_password(user.password)
@@ -29,8 +26,10 @@ def register(user: schemas.UserCreate, db: Session = Depends(get_db)):
 
 
 @router.post("/token", response_model=schemas.Token)
-def login(form_data: OAuth2PasswordRequestForm = Depends(),
-          db: Session = Depends(get_db)):
+def login(
+    form_data: OAuth2PasswordRequestForm = Depends(),
+    db: Session = Depends(get_db)
+):
     user = db.query(models.User).filter(
         models.User.username == form_data.username
     ).first()

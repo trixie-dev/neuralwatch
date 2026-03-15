@@ -1,8 +1,6 @@
 # NeuralWatch 🧠
 
-A REST API for registering and monitoring AI model deployments — built with **FastAPI**, **SQLite**, and **JWT authentication**.
-
-> A live dashboard shows real-time model status, CPU load, latency, and request traffic.
+A live dashboard shows real-time model status, CPU load, latency, and request traffic.
 
 ---
 
@@ -48,9 +46,3 @@ uvicorn app.main:app --reload
 ```
 
 Then visit `http://127.0.0.1:8000/docs`
-
----
-
-## Author
-
-Built by [Tracy](https://github.com/tracycodes01) as a portfolio project.
