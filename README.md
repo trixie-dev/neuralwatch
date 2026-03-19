@@ -1,4 +1,4 @@
-# NeuralWatch 🧠
+# NeuralWatch
 
 A live dashboard shows real-time model status, CPU load, latency, and request traffic.
 
